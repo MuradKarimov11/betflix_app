@@ -7,14 +7,14 @@ import {Navbar} from "./ui/Navbar/Navbar.jsx"
 export const Layout = () => {
   return (
     <Container 
-        fixed
-        // sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}
+      fixed
+      sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}
     >
 
-        <Box sx={{ p: 4 }} />
-        <Navbar/>
-        <Outlet/>
-        <Footer/>
+      <Box sx={{ p: 4 }} />
+      <Navbar/>
+      <Outlet/>
+      <Footer/>
     </Container>
   )
 }

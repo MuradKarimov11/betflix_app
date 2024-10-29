@@ -1,4 +1,4 @@
-import { AppBar, Box, Container, Drawer, IconButton, Link, List, ListItem, ListItemButton, ListItemIcon, Slide, Stack, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Container, Drawer, IconButton, Link, List, ListItem, ListItemButton, ListItemIcon, Slide, Stack, Toolbar, Typography, useScrollTrigger } from "@mui/material";
 import { useContext, useState} from "react";
 import { Link as RouterLink } from 'react-router-dom';
 import MenuIcon from "@mui/icons-material/Menu";
