@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useGetFilmsTopQuery } from "../../../services/kinopoiskApi";
 
 import { TOP_LISTS } from '../../../constants';
@@ -12,7 +12,6 @@ export const MoviesListTop = () => {
 
   const location = useLocation();
   const [page, setPage] = useState(1);
-
   const navigate = useNavigate();
 
   const movieType = TOP_LISTS.find(el => el.url === location.pathname);
@@ -21,6 +20,10 @@ export const MoviesListTop = () => {
     type: movieType.value,
     page
   });
+
+  useEffect(() => {
+    setPage(1);
+  }, [location])
 
   if (error) return <p>Some error</p>
 
