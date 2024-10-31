@@ -1,7 +1,7 @@
 import { Box, Link, Rating, Stack, Tooltip } from "@mui/material"
 import { Link as RouterLink } from 'react-router-dom';
 
-import styles from './MovieCard.module';
+import styles from './MovieCard.module.css';
 
 export const MovieCard = ({ movie }) => {
 

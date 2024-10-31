@@ -1,5 +1,5 @@
-import { AppBar, Box, Container, Drawer, IconButton, Link, List, ListItem, ListItemButton, ListItemIcon, Slide, Stack, Toolbar, Typography, useScrollTrigger } from "@mui/material";
-import { useContext, useState} from "react";
+import { AppBar, Box, Container, Drawer, IconButton, Link, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Slide, Stack, Toolbar, Typography, useScrollTrigger } from "@mui/material";
+import { useContext, useState } from "react";
 import { Link as RouterLink } from 'react-router-dom';
 import MenuIcon from "@mui/icons-material/Menu";
 import { Brightness4, Brightness7 } from '@mui/icons-material';
@@ -30,7 +30,7 @@ export const Navbar = () => {
         <Container maxWidth="lg">
           <Toolbar disableGutters>
             <IconButton color="inherit" onClick={handleDrawerToggle}>
-              <MenuIcon/>
+              <MenuIcon />
             </IconButton>
 
             <Drawer open={isOpen} onClose={handleDrawerToggle}>

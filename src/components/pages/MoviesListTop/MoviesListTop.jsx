@@ -6,6 +6,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Button, Stack, Typography } from "@mui/material";
 import { MoviesList } from "../../ui/MoviesList/MoviesList";
 import { ArrowBack } from "@mui/icons-material";
+import { ErrorMessage } from "../../ui/ErrorMessage/ErrorMessage";
+import { SelectMovies } from "../../ui/SelectMovies/SelectMovies";
 
 
 export const MoviesListTop = () => {
@@ -25,9 +27,9 @@ export const MoviesListTop = () => {
     setPage(1);
   }, [location])
 
-  if (error) return <p>Some error</p>
+  if (error) return <ErrorMessage />
 
-  if (isLoading) return <p>Loading...</p>
+  if (isLoading) return <SelectMovies />
 
   return (
     <>

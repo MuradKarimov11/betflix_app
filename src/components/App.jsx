@@ -3,8 +3,8 @@ import { Layout } from "./Layout"
 import { Movies } from "./pages/Movies/Movies"
 import { MovieDetail } from "./pages/MovieDetail/MovieDetail"
 import { ActorDetail } from "./pages/ActorDetail/ActorDetail"
-import {MoviesListTop} from "./pages/MoviesListTop/MoviesListTop"
-import {MoviesListMain} from "./pages/MoviesListMain/MoviesListMain"
+import { MoviesListTop } from "./pages/MoviesListTop/MoviesListTop"
+import { MoviesListMain } from "./pages/MoviesListMain/MoviesListMain"
 import { MOVIE_LISTS, TOP_LISTS } from "../constants"
 
 
@@ -13,11 +13,11 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Layout/>,
+      element: <Layout />,
       children: [
         {
           path: '/',
-          element: <Movies/>
+          element: <Movies />
         },
         ...TOP_LISTS.map(el => ({
           path: el.url,
@@ -29,17 +29,19 @@ function App() {
         })),
         {
           path: '/movie/:id',
-          element: <MovieDetail/>
+          element: <MovieDetail />
         },
         {
           path: '/actor/:id',
-          element: <ActorDetail/>
+          element: <ActorDetail />
         },
       ]
     },
   ])
-  
-  return <RouterProvider router={router} />
+
+  return (
+    <RouterProvider router={router} />
+  )
 }
 
 export default App
