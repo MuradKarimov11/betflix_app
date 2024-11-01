@@ -7,7 +7,7 @@ import { Button, Stack, Typography } from "@mui/material";
 import { MoviesList } from "../../ui/MoviesList/MoviesList";
 import { ArrowBack } from "@mui/icons-material";
 import { ErrorMessage } from "../../ui/ErrorMessage/ErrorMessage";
-import { SelectMovies } from "../../ui/SelectMovies/SelectMovies";
+import { MoviesListTopSkeleton } from "./MoviesListTopSkeleton";
 
 
 export const MoviesListTop = () => {
@@ -29,7 +29,7 @@ export const MoviesListTop = () => {
 
   if (error) return <ErrorMessage />
 
-  if (isLoading) return <SelectMovies />
+  if (isLoading) return <MoviesListTopSkeleton />
 
   return (
     <>
