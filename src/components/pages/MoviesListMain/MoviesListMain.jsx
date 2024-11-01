@@ -8,8 +8,8 @@ import { MoviesList } from "../../ui/MoviesList/MoviesList";
 import { ErrorMessage } from "../../ui/ErrorMessage/ErrorMessage";
 import { SelectMovies } from "../../ui/SelectMovies/SelectMovies";
 import { MOVIE_LISTS } from '../../../constants';
-import { useGetFilmsQuery } from "../../../services/kinopoiskApi";
-
+import { useGetFilmsQuery, useGetGenresAndCountriesQuery } from "../../../services/kinopoiskApi";
+import { MoviesListMainSkeleton } from "./MoviesListMainSkeleton";
 
 export const MoviesListMain = () => {
 
@@ -32,13 +32,17 @@ export const MoviesListMain = () => {
     page,
   });
 
+  const responseGenresAndCountries = useGetGenresAndCountriesQuery();
+
   useEffect(() => {
     setPage(1);
   }, [location])
 
-  if (error) return <ErrorMessage />
+  if (responseFilms.error || responseGenresAndCountries.error)
+    return <ErrorMessage />;
 
-  if (isLoading) return <SelectMovies />
+  if (responseFilms.isLoading || responseGenresAndCountries.isLoading)
+    return <MoviesListMainSkeleton />;
 
   return (
     <>
@@ -49,9 +53,18 @@ export const MoviesListMain = () => {
         <Typography variant="h4">{movieType.title}</Typography>
       </Stack>
 
+      <SelectMovies
+        countriesList={responseGenresAndCountries.data.countries}
+        genresList={responseGenresAndCountries.data.genres}
+        countries={countries}
+        order={order}
+        year={year}
+        genreId={genreId}
+      />
+
       <MoviesList
-        movies={data.items}
-        totalPages={data.totalPages}
+        movies={responseFilms.data.items}
+        totalPages={responseFilms.data.totalPages}
         page={page}
         setPage={setPage} />
     </>
