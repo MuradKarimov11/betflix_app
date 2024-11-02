@@ -5,6 +5,7 @@ import { Box, Button, ButtonGroup, Link, CircularProgress, Grid2, Stack, Typogra
 import { MovieCard } from "../../ui/MovieCard/MovieCard";
 import { ErrorMessage } from "../../ui/ErrorMessage/ErrorMessage";
 import { ArrowBack, Language, Movie } from "@mui/icons-material";
+import { VideoPlayer } from "../../ui/VideoPlayer/VideoPlayer";
 
 export const MovieDetail = () => {
   const id = useParams();
