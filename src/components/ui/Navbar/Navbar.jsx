@@ -1,11 +1,30 @@
-import { AppBar, Box, Container, Drawer, IconButton, Link, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Slide, Stack, Toolbar, Typography, useScrollTrigger } from "@mui/material";
-import { useContext, useState } from "react";
+// import { Brightness4, Brightness7 } from '@mui/icons-material';
+import MenuIcon from '@mui/icons-material/Menu';
+import {
+  AppBar,
+  Box,
+  Container,
+  Divider,
+  Drawer,
+  IconButton,
+  Link,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Slide,
+  Stack,
+  Toolbar,
+  Typography,
+  useScrollTrigger,
+} from '@mui/material';
+import React, { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import MenuIcon from "@mui/icons-material/Menu";
-import { Brightness4, Brightness7 } from '@mui/icons-material';
 
 import { iconComponents, MOVIE_LISTS, TOP_LISTS } from '../../../constants';
-import { ColorModeContext } from '../../../context/ToggleColorMode';
+// import { ColorModeContext } from '../../../context/ToggleColorMode';
+import { Search } from '../Search/Search';
 
 const Icon = ({ iconName }) => {
   const IconComponent = iconComponents[iconName];
@@ -14,7 +33,7 @@ const Icon = ({ iconName }) => {
 
 export const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
-  const { toggleColorMode, mode } = useContext(ColorModeContext);
+  // const { toggleColorMode, mode } = useContext(ColorModeContext);
 
   const trigger = useScrollTrigger({
     target: window,
@@ -32,7 +51,6 @@ export const Navbar = () => {
             <IconButton color="inherit" onClick={handleDrawerToggle}>
               <MenuIcon />
             </IconButton>
-
             <Drawer open={isOpen} onClose={handleDrawerToggle}>
               <Box sx={{ width: 250 }} onClick={handleDrawerToggle}>
                 <List>
@@ -41,7 +59,7 @@ export const Navbar = () => {
                       <ListItem disablePadding>
                         <ListItemButton>
                           <ListItemIcon>
-                            {/* <Icon iconName={item.icon} /> */}
+                            <Icon iconName={item.icon} />
                           </ListItemIcon>
                           <ListItemText primary={item.title} />
                         </ListItemButton>
@@ -50,7 +68,6 @@ export const Navbar = () => {
                   ))}
                 </List>
                 <Divider />
-
                 <List>
                   {MOVIE_LISTS.map(item => (
                     <Link key={item.title} component={RouterLink} to={item.url}>
@@ -67,7 +84,6 @@ export const Navbar = () => {
                 </List>
               </Box>
             </Drawer>
-
             <Stack
               flexDirection="row"
               justifyContent="space-between"
@@ -82,12 +98,10 @@ export const Navbar = () => {
               >
                 betflix
               </Typography>
-
-              {/* <Search /> */}
-
-              <IconButton color="inherit" onClick={toggleColorMode}>
+              <Search />
+              {/* <IconButton color="inherit" onClick={toggleColorMode}>
                 {mode === 'dark' ? <Brightness7 /> : <Brightness4 />}
-              </IconButton>
+              </IconButton> */}
             </Stack>
           </Toolbar>
         </Container>
