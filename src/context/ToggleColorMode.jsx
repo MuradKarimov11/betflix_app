@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from 'react';
 
 export const ColorModeContext = createContext();
 
-export default function ToggleColorMode({ children }) {
+export const ToggleColorMode = ({ children }) => {
     const [mode, setMode] = useState('dark');
 
     const theme = createTheme({ palette: { mode } });
