@@ -1,3 +1,4 @@
+import React from 'react';
 import { Box, Link, Rating, Stack, Tooltip } from "@mui/material"
 import { Link as RouterLink } from 'react-router-dom';
 
@@ -5,12 +6,12 @@ import styles from './MovieCard.module.css';
 
 export const MovieCard = ({ movie, reload = false }) => {
 
-    const linkProps = reload ?
-        { component: 'a', href: `/movie/${movie.kinopoiskId}` } :
-        { component: RouterLink, to: `/movie/${movie.kinopoiskId}` };
+    const linkProps = reload
+        ? { component: 'a', href: `/movie/${movie.kinopoiskId}` }
+        : { component: RouterLink, to: `/movie/${movie.kinopoiskId}` };
 
     return (
-        <Stack>
+        <Stack alignItems='center'>
             <Link {...linkProps}>
                 <img
                     src={movie.posterUrlPreview}

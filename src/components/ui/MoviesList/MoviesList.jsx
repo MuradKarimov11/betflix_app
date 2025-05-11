@@ -1,4 +1,4 @@
-import { Pagination, Stack, Typography } from "@mui/material"
+import { Pagination, Stack } from "@mui/material"
 import { MovieCard } from "../MovieCard/MovieCard"
 
 

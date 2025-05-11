@@ -1,8 +1,8 @@
-import { Box, Container } from "@mui/material"
-import { Outlet } from "react-router-dom"
+import { Box, Container } from "@mui/material";
+import { Outlet } from "react-router-dom";
 
-import { Footer } from "./ui/Footer/Footer"
-import { Navbar } from "./ui/Navbar/Navbar"
+import { Footer } from "./ui/Footer/Footer";
+import { Navbar } from "./ui/Navbar/Navbar";
 
 export const Layout = () => {
   return (

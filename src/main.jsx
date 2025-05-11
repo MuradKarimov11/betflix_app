@@ -1,4 +1,5 @@
-import { createRoot } from 'react-dom/client'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import { CssBaseline } from '@mui/material';
 import { Provider } from 'react-redux';
 
@@ -9,7 +10,7 @@ import { ToggleColorMode } from './context/ToggleColorMode';
 
 import 'bear-react-carousel/dist/index.css';
 
-createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
     <Provider store={store}>
         <ToggleColorMode>
             <CssBaseline />

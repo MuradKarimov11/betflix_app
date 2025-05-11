@@ -20,16 +20,16 @@ export const MoviesListTop = () => {
 
   const { data, error, isLoading } = useGetFilmsTopQuery({
     type: movieType.value,
-    page
+    page,
   });
 
   useEffect(() => {
     setPage(1);
   }, [location])
 
-  if (error) return <ErrorMessage />
+  if (error) return <ErrorMessage />;
 
-  if (isLoading) return <MoviesListTopSkeleton />
+  if (isLoading) return <MoviesListTopSkeleton />;
 
   return (
     <>

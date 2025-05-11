@@ -19,7 +19,7 @@ import {
   Typography,
   useScrollTrigger,
 } from '@mui/material';
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
 import { iconComponents, MOVIE_LISTS, TOP_LISTS } from '../../../constants';

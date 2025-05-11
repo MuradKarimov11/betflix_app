@@ -1,4 +1,5 @@
 import { Skeleton, Stack, useMediaQuery } from '@mui/material';
+import React from 'react';
 
 export const MoviesListMainSkeleton = () => {
     const isMobile = useMediaQuery('(max-width:600px)');

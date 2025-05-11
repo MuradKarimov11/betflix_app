@@ -16,11 +16,11 @@ export const kinopoiskApi = createApi({
   baseQuery: fetchBaseQuery({ 
     baseUrl: 'https://kinopoiskapiunofficial.tech/api',
     prepareHeaders: headers => {
-        headers.set('X-API-KEY', kinopoiskApiKey)
-        headers.set('Content-Type', 'application/json')
-    }    
+      headers.set('X-API-KEY', kinopoiskApiKey);
+      headers.set('Content-Type', 'application/json');
+    },    
   }),
-  endpoints: (builder) => ({
+  endpoints: builder => ({
     getFilmsTop: builder.query({
       query: ({type, page}) => `/v2.2/films/collections?type=${type}&page=${page}`,
     }),
@@ -77,4 +77,4 @@ export const {
   useGetFilmQuery,
   useGetSequelsAndPrequelsQuery,
   useGetStaffQuery,
-  useGetStaffByIdQuery } = kinopoiskApi
+  useGetStaffByIdQuery } = kinopoiskApi;

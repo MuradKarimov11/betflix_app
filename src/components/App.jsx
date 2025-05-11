@@ -1,11 +1,12 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import { Layout } from "./Layout"
-import { Movies } from "./pages/Movies/Movies"
-import { MovieDetail } from "./pages/MovieDetail/MovieDetail"
-import { ActorDetail } from "./pages/ActorDetail/ActorDetail"
-import { MoviesListTop } from "./pages/MoviesListTop/MoviesListTop"
-import { MoviesListMain } from "./pages/MoviesListMain/MoviesListMain"
-import { MOVIE_LISTS, TOP_LISTS } from "../constants"
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import { MOVIE_LISTS, TOP_LISTS } from "../constants";
+import { Layout } from "./Layout";
+import { Movies } from "./pages/Movies/Movies";
+import { MovieDetail } from "./pages/MovieDetail/MovieDetail";
+import { ActorDetail } from "./pages/ActorDetail/ActorDetail";
+import { MoviesListTop } from "./pages/MoviesListTop/MoviesListTop";
+import { MoviesListMain } from "./pages/MoviesListMain/MoviesListMain";
 
 
 function App() {
@@ -44,4 +45,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
